@@ -2,322 +2,193 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Manga Land | مانگا لند</title>
-
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-body{
-  font-family:Tahoma,Arial,sans-serif;
-  background:#09090d;
-  color:white;
-}
-
-header{
-  padding:20px 7%;
-  background:#111118;
-  border-bottom:1px solid #292936;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-.logo{
-  color:#b45cff;
-  font-size:25px;
-  font-weight:bold;
-}
-
-nav a{
-  color:#ddd;
-  text-decoration:none;
-  margin:0 10px;
-}
-
-nav a:hover{
-  color:#b45cff;
-}
-
-.hero{
-  text-align:center;
-  padding:90px 20px;
-  background:radial-gradient(circle,#35145a,#09090d 70%);
-}
-
-.hero h1{
-  font-size:45px;
-  margin-bottom:15px;
-}
-
-.hero h1 span{
-  color:#b45cff;
-}
-
-.hero p{
-  color:#bbb;
-  margin-bottom:25px;
-}
-
-.search{
-  max-width:600px;
-  margin:auto;
-  display:flex;
-}
-
-.search input{
-  flex:1;
-  padding:15px;
-  border:0;
-  outline:0;
-  font-size:15px;
-  border-radius:0 10px 10px 0;
-}
-
-.search button{
-  padding:15px 25px;
-  border:0;
-  background:#9b4dff;
-  color:white;
-  cursor:pointer;
-  border-radius:10px 0 0 10px;
-}
-
-.container{
-  width:88%;
-  margin:45px auto;
-}
-
-.title{
-  border-right:4px solid #a855f7;
-  padding-right:12px;
-  margin-bottom:25px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
-  gap:20px;
-}
-
-.card{
-  background:#14141c;
-  border:1px solid #282834;
-  border-radius:14px;
-  overflow:hidden;
-  transition:.3s;
-  cursor:pointer;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-  border-color:#a855f7;
-}
-
-.card img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-}
-
-.card-content{
-  padding:15px;
-}
-
-.card h3{
-  margin-bottom:8px;
-}
-
-.card p{
-  color:#999;
-  font-size:13px;
-}
-
-.badge{
-  display:inline-block;
-  margin-top:10px;
-  padding:5px 8px;
-  background:#7c3aed;
-  border-radius:5px;
-  font-size:11px;
-}
-
-footer{
-  text-align:center;
-  padding:35px;
-  color:#777;
-  background:#0d0d12;
-  margin-top:60px;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Tahoma,Arial,sans-serif;background:#08080d;color:#fff}
+header{padding:18px 6%;background:#111118;border-bottom:1px solid #292936;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+.logo{color:#b45cff;font-size:25px;font-weight:bold}
+nav a{color:#ddd;text-decoration:none;margin:0 10px}
+.hero{text-align:center;padding:75px 20px;background:radial-gradient(circle,#35145a,#09090d 70%)}
+.hero h1{font-size:42px;margin-bottom:15px}
+.hero span{color:#b45cff}
+.search{max-width:600px;margin:25px auto;display:flex}
+.search input{flex:1;padding:16px;border:0;outline:0;border-radius:0 10px 10px 0}
+.search button{padding:15px 25px;border:0;background:#9b4dff;color:white;border-radius:10px 0 0 10px}
+.container{width:90%;max-width:1200px;margin:45px auto}
+.title{border-right:4px solid #a855f7;padding-right:12px;margin-bottom:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:20px}
+.card{background:#14141c;border:1px solid #282834;border-radius:14px;overflow:hidden;transition:.3s;cursor:pointer}
+.card:hover{transform:translateY(-6px);border-color:#a855f7}
+.card img{width:100%;height:270px;object-fit:cover}
+.card-content{padding:15px}
+.card h3{margin-bottom:8px}
+.card p{color:#999;font-size:13px}
+.badge{display:inline-block;margin-top:10px;padding:6px 9px;background:#7c3aed;border-radius:5px;font-size:11px}
+.page{display:none}
+.back{display:inline-block;margin-bottom:25px;padding:10px 18px;background:#22222d;border-radius:8px;cursor:pointer}
+.manga-header{display:flex;gap:25px;align-items:center;background:#12121a;padding:25px;border-radius:15px;margin-bottom:30px}
+.manga-header img{width:160px;height:230px;object-fit:cover;border-radius:10px}
+.chapter{display:flex;justify-content:space-between;align-items:center;background:#15151e;padding:18px;margin-bottom:10px;border-radius:10px;border:1px solid #292936}
+.chapter button{background:#9147ff;color:white;border:0;padding:10px 18px;border-radius:7px;cursor:pointer}
+.reader{text-align:center}
+.reader img{max-width:100%;display:block;margin:15px auto}
+footer{text-align:center;padding:35px;color:#777;margin-top:60px;background:#0d0d12}
 @media(max-width:600px){
-  header{
-    flex-direction:column;
-    gap:15px;
-  }
-
-  .hero h1{
-    font-size:35px;
-  }
-
-  .grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .card img{
-    height:220px;
-  }
+header{flex-direction:column;gap:15px}
+.hero h1{font-size:32px}
+.grid{grid-template-columns:repeat(2,1fr);gap:12px}
+.card img{height:220px}
+.manga-header{flex-direction:column;text-align:center}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="logo">📚 Manga Land</div>
-
-  <nav>
-    <a href="#">خانه</a>
-    <a href="#mangas">مانگاها</a>
-    <a href="#latest">آخرین فصل‌ها</a>
-  </nav>
+<div class="logo">📚 Manga Land</div>
+<nav>
+<a href="#" onclick="home()">خانه</a>
+<a href="#mangas">مانگاها</a>
+</nav>
 </header>
 
-<section class="hero">
-
-  <h1>
-    به <span>مانگا لند</span> خوش آمدید
-  </h1>
-
-  <p>
-    دنیای مانگاهای فارسی در یک جا ⚡
-  </p>
-
-  <div class="search">
-    <input
-      id="search"
-      type="text"
-      placeholder="نام مانگا را جستجو کنید..."
-    >
-
-    <button onclick="searchManga()">
-      جستجو
-    </button>
-  </div>
-
-</section>
+<section id="home">
+<div class="hero">
+<h1>به <span>مانگا لند</span> خوش آمدید</h1>
+<p>دنیای مانگا در یک جا ⚡</p>
+<div class="search">
+<input id="search" placeholder="نام مانگا را بنویس..." oninput="searchManga()">
+<button onclick="searchManga()">جستجو</button>
+</div>
+</div>
 
 <main class="container" id="mangas">
+<h2 class="title">🔥 مانگاها</h2>
+<div class="grid" id="grid">
 
-<h2 class="title">🔥 محبوب‌ترین مانگاها</h2>
-
-<div class="grid">
-
-  <div class="card" data-name="وان پیس">
-    <img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&w=600&q=80">
-    <div class="card-content">
-      <h3>وان پیس</h3>
-      <p>One Piece</p>
-      <span class="badge">در حال انتشار</span>
-    </div>
-  </div>
-
-  <div class="card" data-name="بلیچ">
-    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80">
-    <div class="card-content">
-      <h3>بلیچ</h3>
-      <p>Bleach</p>
-      <span class="badge">کامل</span>
-    </div>
-  </div>
-
-  <div class="card" data-name="ناروتو">
-    <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80">
-    <div class="card-content">
-      <h3>ناروتو</h3>
-      <p>Naruto</p>
-      <span class="badge">کامل</span>
-    </div>
-  </div>
-
-  <div class="card" data-name="جوجوتسو کایسن">
-    <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01988f5?auto=format&fit=crop&w=600&q=80">
-    <div class="card-content">
-      <h3>جوجوتسو کایسن</h3>
-      <p>Jujutsu Kaisen</p>
-      <span class="badge">در حال انتشار</span>
-    </div>
-  </div>
-
+<div class="card" data-name="بلیچ bleach" onclick="openManga('bleach')">
+<img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80">
+<div class="card-content"><h3>بلیچ</h3><p>Bleach</p><span class="badge">کامل</span></div>
 </div>
 
-<br><br>
-
-<h2 class="title" id="latest">🆕 آخرین فصل‌ها</h2>
-
-<div class="grid">
-
-  <div class="card">
-    <div class="card-content">
-      <h3>وان پیس</h3>
-      <p>فصل ۱۱۵۰</p>
-      <span class="badge">مطالعه فصل</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-content">
-      <h3>بلیچ</h3>
-      <p>فصل ۶۸۶</p>
-      <span class="badge">مطالعه فصل</span>
-    </div>
-  </div>
-
+<div class="card" data-name="وان پیس one piece" onclick="openManga('onepiece')">
+<img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&w=600&q=80">
+<div class="card-content"><h3>وان پیس</h3><p>One Piece</p><span class="badge">در حال انتشار</span></div>
 </div>
 
+<div class="card" data-name="ناروتو naruto" onclick="openManga('naruto')">
+<img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80">
+<div class="card-content"><h3>ناروتو</h3><p>Naruto</p><span class="badge">کامل</span></div>
+</div>
+
+<div class="card" data-name="جوجوتسو کایسن jujutsu kaisen" onclick="openManga('jujutsu')">
+<img src="https://images.unsplash.com/photo-1577083552431-6e5fd01988f5?auto=format&fit=crop&w=600&q=80">
+<div class="card-content"><h3>جوجوتسو کایسن</h3><p>Jujutsu Kaisen</p><span class="badge">کامل</span></div>
+</div>
+
+</div>
 </main>
+</section>
 
-<footer>
-  © 2026 Manga Land — تمامی حقوق محفوظ است
-</footer>
+<section id="mangaPage" class="page">
+<main class="container">
+<div class="back" onclick="home()">⬅️ برگشت</div>
+<div class="manga-header">
+<img id="cover">
+<div><h1 id="title"></h1><p id="description"></p></div>
+</div>
+<h2 class="title">📚 فصل‌ها</h2>
+<div id="chapters"></div>
+</main>
+</section>
+
+<section id="readerPage" class="page">
+<main class="container reader">
+<div class="back" onclick="backToManga()">⬅️ برگشت به فصل‌ها</div>
+<h1 id="readerTitle"></h1>
+<p style="color:#aaa;margin:20px">صفحات مجاز مانگا را می‌توانی اینجا اضافه کنی.</p>
+</main>
+</section>
+
+<footer>© 2026 Manga Land</footer>
 
 <script>
+const data={
+bleach:{
+title:"بلیچ",
+description:"Bleach",
+cover:"https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80",
+chapters:20
+},
+onepiece:{
+title:"وان پیس",
+description:"One Piece",
+cover:"https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&w=600&q=80",
+chapters:20
+},
+naruto:{
+title:"ناروتو",
+description:"Naruto",
+cover:"https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80",
+chapters:20
+},
+jujutsu:{
+title:"جوجوتسو کایسن",
+description:"Jujutsu Kaisen",
+cover:"https://images.unsplash.com/photo-1577083552431-6e5fd01988f5?auto=format&fit=crop&w=600&q=80",
+chapters:20
+}
+};
 
-function searchManga(){
+let current="";
 
-  const input =
-    document
-    .getElementById("search")
-    .value
-    .toLowerCase()
-    .trim();
+function openManga(id){
+current=id;
+let m=data[id];
+document.getElementById("home").style.display="none";
+document.getElementById("mangaPage").style.display="block";
+document.getElementById("readerPage").style.display="none";
+document.getElementById("cover").src=m.cover;
+document.getElementById("title").textContent=m.title;
+document.getElementById("description").textContent=m.description;
 
-  const cards =
-    document.querySelectorAll(".card[data-name]");
-
-  cards.forEach(card => {
-
-    const name =
-      card.dataset.name.toLowerCase();
-
-    if(input === "" || name.includes(input)){
-      card.style.display = "";
-    }else{
-      card.style.display = "none";
-    }
-
-  });
-
+let html="";
+for(let i=m.chapters;i>=1;i--){
+html+=`<div class="chapter"><strong>فصل ${i}</strong><button onclick="read(${i})">📖 مطالعه</button></div>`;
+}
+document.getElementById("chapters").innerHTML=html;
+window.scrollTo(0,0);
 }
 
+function read(n){
+document.getElementById("mangaPage").style.display="none";
+document.getElementById("readerPage").style.display="block";
+document.getElementById("readerTitle").textContent=data[current].title+" — فصل "+n;
+window.scrollTo(0,0);
+}
+
+function backToManga(){
+document.getElementById("readerPage").style.display="none";
+document.getElementById("mangaPage").style.display="block";
+}
+
+function home(){
+document.getElementById("home").style.display="block";
+document.getElementById("mangaPage").style.display="none";
+document.getElementById("readerPage").style.display="none";
+window.scrollTo(0,0);
+}
+
+function searchManga(){
+let q=document.getElementById("search").value.toLowerCase().trim();
+document.querySelectorAll(".card").forEach(c=>{
+c.style.display=!q||c.dataset.name.toLowerCase().includes(q)?"":"none";
+});
+}
 </script>
 
 </body>
 </html>
+```0
